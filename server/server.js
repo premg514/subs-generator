@@ -13,8 +13,7 @@ app.use(
   cors({
     origin: "https://prems-subs-generator.vercel.app", // ✅ Allow frontend requests
     methods: "GET, POST",
-    allowedHeaders: "Content-Type",
-    credentials: true, // ✅ Needed if using authentication
+    allowedHeaders: "Content-Type"
   })
 );
 
