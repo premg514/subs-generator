@@ -11,7 +11,7 @@ app.use(fileUpload()); //it will parse the mutipart data
 app.use(express.json()); // Enable JSON parsing for request bodies
 app.use(
   cors({
-    origin: "https://prems-subs-generator.vercel.app", // Replace with your frontend URL
+    origin: "https://prems-subs-generator.vercel.app/", // Replace with your frontend URL
     methods: "GET, POST, PUT, DELETE",
     allowedHeaders: "Content-Type, Authorization",
   })
