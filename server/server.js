@@ -11,13 +11,6 @@ app.use(fileUpload()); //it will parse the mutipart data
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 
-const corsOptions = {
-  origin: "https://prems-subs-generator.vercel.app", // Allow only this frontend
-  methods: "GET,POST",
-};
-
-app.use(cors(corsOptions)); //configure cors
-
 app.use("/api/subs", subRoutes); // Use routes for the "/api/subs" endpoint
 
 app.listen(process.env.PORT, () => {
