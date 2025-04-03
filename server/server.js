@@ -7,15 +7,13 @@ import subRoutes from "./routes/subs.routes.js";
 const app = express();
 
 configDotenv(); //configure the env
-
-app.use(fileUpload({ limits: { fileSize: 200 * 1024 * 1024 } })); // 100MB file limit
-app.use(express.json({ limit: "200mb" }));
-app.use(express.urlencoded({ limit: "200mb", extended: true }));
+app.use(fileUpload()); //it will parse the mutipart data
+app.use(express.json()); // Enable JSON parsing for request bodies
 app.use(
   cors({
-    origin: "http://localhost:5173/", // Allow frontend origin
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type,Authorization",
+    origin: "https://prems-subs-generator.vercel.app", // Replace with your frontend URL
+    methods: "GET, POST, PUT, DELETE",
+    allowedHeaders: "Content-Type, Authorization",
   })
 );
 
