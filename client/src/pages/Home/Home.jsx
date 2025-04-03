@@ -135,7 +135,13 @@ const Home = () => {
 
       const response = await axios.post(
         `${import.meta.env.VITE_BACKEND_API}/api/subs/`,
-        formData
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          withCredentials: true, // Enable if using authentication (optional)
+        }
       );
 
       // Clean up the subtitle data by removing the markdown code block
