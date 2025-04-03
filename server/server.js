@@ -14,7 +14,6 @@ app.use(express.urlencoded({ limit: "100mb", extended: true }));
 const corsOptions = {
   origin: "https://prems-subs-generator.vercel.app", // Allow only this frontend
   methods: "GET,POST",
-  allowedHeaders: "Content-Type",
 };
 
 app.use(cors(corsOptions)); //configure cors
