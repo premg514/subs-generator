@@ -7,6 +7,8 @@ import subRoutes from "./routes/subs.routes.js";
 const app = express();
 
 configDotenv(); //configure the env
+
+app.use(fileUpload({ limits: { fileSize: 200 * 1024 * 1024 } })); // 100MB file limit
 app.use(express.json({ limit: "200mb" }));
 app.use(express.urlencoded({ limit: "200mb", extended: true }));
 app.use(
