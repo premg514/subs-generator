@@ -9,13 +9,7 @@ const app = express();
 configDotenv(); //configure the env
 app.use(fileUpload()); //it will parse the mutipart data
 app.use(express.json()); // Enable JSON parsing for request bodies
-app.use(
-  cors({
-    origin: "https://prems-subs-generator.vercel.app", // ✅ Allow frontend requests
-    methods: "GET, POST",
-    allowedHeaders: "Content-Type"
-  })
-);
+app.use(cors({}));
 
 app.use("/api/subs", subRoutes); // Use routes for the "/api/subs" endpoint
 
